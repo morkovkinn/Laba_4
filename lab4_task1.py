@@ -1,10 +1,8 @@
 import json
 
 def task(filename) -> float:
-    current_sum = 0
 
-    for pair in filename:
-        current_sum += pair['score'] * pair['weight']
+    current_sum = sum([pair['score'] * pair['weight'] for pair in filename])
 
     otvet = round(current_sum, 3)
     return otvet
